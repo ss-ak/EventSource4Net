@@ -46,6 +46,7 @@ namespace EventSource4Net
                         catch (Exception ex)
                         {
                             _logger.Trace(ex, "ConnectedState.Run");
+                            return new DisconnectedState(mResponse.ResponseUri, mWebRequesterFactory);
                         }
                         if (!cancelToken.IsCancellationRequested)
                         {
